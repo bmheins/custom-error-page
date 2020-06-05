@@ -50,8 +50,7 @@ class ConfigurationUtility
 
     private static function loadConfigurationFromYaml(string $fileName, int $page): array
     {
-        $yamlParser = new Yaml();
-        $configuration = $yamlParser->parse(file_get_contents($fileName));
+        $configuration = Yaml::parse(file_get_contents($fileName));
 
         $configurationArray = [];
         $isFirst = true;
